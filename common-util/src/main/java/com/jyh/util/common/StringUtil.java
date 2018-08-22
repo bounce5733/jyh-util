@@ -1,5 +1,7 @@
 package com.jyh.util.common;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * 字符串处理工具类
  * 
@@ -9,39 +11,13 @@ package com.jyh.util.common;
 public class StringUtil {
 
 	/**
-	 * 判断字符串是否为空或null
-	 * 
-	 * @param str
-	 * @return
-	 */
-	public static boolean isEmpty(String str) {
-		if (str == null || str.trim().equals("")) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * 判断字符串是否不为空或null
-	 * 
-	 * @param str
-	 * @return
-	 */
-	public static boolean isNotEmpty(String str) {
-		if (str == null || str.trim().equals("")) {
-			return false;
-		}
-		return true;
-	}
-
-	/**
 	 * 驼峰式转下划线形式
 	 * 
 	 * @param name
 	 * @return
 	 */
 	public static String camelToUnderline(String name) {
-		if (StringUtil.isEmpty(name)) {
+		if (StringUtils.isBlank(name)) {
 			return "";
 		}
 		int len = name.length();
